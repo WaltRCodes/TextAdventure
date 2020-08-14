@@ -6,13 +6,16 @@ import java.util.Map;
 public class Room {
 	private String name;
 	private String description;
+	private String event;
+	private boolean outcome;
 	private Map<String,Room> directions = new HashMap<>();
 	
-	public Room(String name, String description) {
+	public Room(String name, String description, String event, boolean outcome) {
 		super();
 		this.name = name;
 		this.description = description;
-		this.directions = directions;
+		this.event = event;
+		this.outcome = outcome;
 	}
 	
 	public String getName() {
@@ -32,6 +35,11 @@ public class Room {
 	}
 	public void setDirections(Map<String, Room> directions) {
 		this.directions = directions;
+	}
+	
+	public boolean search() {
+		System.out.println(this.event);
+		return this.outcome;
 	}
 	
 	@Override
